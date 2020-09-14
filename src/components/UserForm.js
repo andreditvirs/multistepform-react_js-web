@@ -1,5 +1,6 @@
 import React from 'react';
 import FormUserDetail from './FormUserDetail';
+import FormPersonalDetail from './FormPersonalDetail';
 
 class UserForm extends React.Component{
     state = {
@@ -50,7 +51,12 @@ class UserForm extends React.Component{
                 );
             case 2:
                 return(
-                    <h1>FormPersonalDetails</h1>
+                    <FormPersonalDetail 
+                        nextStep={this.nextStep}
+                        prevStep={this.prevStep}
+                        handleChange={this.handleChange}
+                        values={values}
+                    />
                 );
             case 3:
                 return(
