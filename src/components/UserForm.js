@@ -1,6 +1,8 @@
 import React from 'react';
 import FormUserDetail from './FormUserDetail';
 import FormPersonalDetail from './FormPersonalDetail';
+import Confirm from './Confirm';
+import Success from './Success';
 
 class UserForm extends React.Component{
     state = {
@@ -60,15 +62,21 @@ class UserForm extends React.Component{
                 );
             case 3:
                 return(
-                    <h1>Confirm</h1>
+                    <Confirm 
+                        nextStep={this.nextStep}
+                        prevStep={this.prevStep}
+                        values={values}
+                    />
                 );
             case 4:
                 return(
-                    <h1>Success</h1>
+                    <Success 
+                        values={values}
+                    />
                 );
             default:
                 return(
-                    <h1>Wrong Step</h1>
+                    <h1>Error Page</h1>
                 );
         }
     }
